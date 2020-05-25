@@ -149,7 +149,7 @@ void CBallsArray::SetGravityFactor(double gF, DWORD ticks)
 
 void CBallsArray::SetTrap()
 {
-	 trap->SetParams(200, 200, 10075.0, 50);
+	 trap->SetParams(200, 200, 20000.0, 50);
 	for (size_t i{ 0 }; i < this->count; i++) {
 		trap->MoveBall(balls[i]);
 	}

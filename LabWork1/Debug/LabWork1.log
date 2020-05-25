@@ -1,10 +1,6 @@
-﻿  wind.cpp
-D:\Ccp_programm\LabWork1\wind.cpp(26,27): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-D:\Ccp_programm\LabWork1\wind.cpp(26,19): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-D:\Ccp_programm\LabWork1\wind.cpp(27,25): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-D:\Ccp_programm\LabWork1\wind.cpp(27,17): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-D:\Ccp_programm\LabWork1\wind.cpp(28,58): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-D:\Ccp_programm\LabWork1\wind.cpp(28,46): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-D:\Ccp_programm\LabWork1\wind.cpp(28,34): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-D:\Ccp_programm\LabWork1\wind.cpp(28,22): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+﻿  Trap.cpp
+D:\Ccp_programm\LabWork1\Trap.cpp(22,58): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\Ccp_programm\LabWork1\Trap.cpp(22,40): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\Ccp_programm\LabWork1\Trap.cpp(22,28): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\Ccp_programm\LabWork1\Trap.cpp(22,19): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
   LabWork1.vcxproj -> D:\Ccp_programm\LabWork1\Debug\LabWork1.exe
