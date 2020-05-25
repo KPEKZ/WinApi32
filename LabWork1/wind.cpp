@@ -5,7 +5,6 @@
 wind::wind()
 {
 	this->hbrush = CreateSolidBrush(RGB(255, 255, 255));
-	//this->F = 9.0;
 	this->angle = 45.0;
 	this->speed = 0.0;
 }

@@ -26,8 +26,8 @@ void Trap::Draw(HDC hdc)
 
 void Trap::MoveBall(CBall* b)
 {
-	double x_dist = (this->x+ r) - (b->x+ b->r);
-	double y_dist = (this->y + r) - (b->y + b->r);
+	double x_dist = this->x - b->x;
+	double y_dist = this->y - b->y;
 	double x2_dist = x_dist*x_dist;
 	double y2_dist = y_dist*y_dist;
 	double dist2 = x2_dist + y2_dist;

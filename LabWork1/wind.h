@@ -8,9 +8,6 @@ class wind
 	HPEN hpen;
 	double angle;
 	double speed;
-	double R;
-	int T;
-	double F;
 
 public:
 	wind();
