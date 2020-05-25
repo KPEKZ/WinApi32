@@ -6,7 +6,7 @@ CBallsArray::CBallsArray(int max_balls)
 	this->max_balls = max_balls;
 	this->count = 0;
 	this->balls = new CBall * [max_balls];
-	this->trap = new Trap();
+	//this->trap = new Trap();
 }
 
 CBallsArray::~CBallsArray(void)
@@ -16,7 +16,7 @@ CBallsArray::~CBallsArray(void)
 	}
 
 	delete[] this->balls;
-	delete this->trap;
+	//delete this->trap;
 }
 
 CBall* CBallsArray::Add()
@@ -74,30 +74,7 @@ void CBallsArray::Move(DWORD ticks)
 
 			}
 
-			//double CC_x = trap->x - ball1->x;
-			//double CC_y = trap->y - ball1->y;
-			//double cc2 = C_x * C_x + C_y * C_y;
-
-			//if (cc2 <= ((ball1->r + trap->r) * (ball1->r + trap->r)))
-			//{
-			//	double AC_scalar = ball1->v_x * CC_x + ball1->v_y * CC_y;
-			//	double BC_scalar = ball2->v_x * CC_x + ball2->v_y * CC_y;
-
-			//	double Ap_v_x = (CC_x * AC_scalar) / cc2;
-			//	double Ap_v_y = (CC_y * AC_scalar) / cc2;
-			//	double At_v_x = ball1->v_x - Ap_v_x;
-			//	double At_v_y = ball1->v_x - Ap_v_y;
-
-			//	double Bp_v_x = (CC_x * BC_scalar) / cc2;
-			//	double Bp_v_y = (CC_y * BC_scalar) / cc2;
-			//	//double Bt_v_x = ball2->v_x - Bp_v_x;
-			//	//double Bt_v_y = ball2->v_x - Bp_v_y;
-
-			//	ball1->v_x = Bp_v_x + At_v_x;
-			//	ball1->v_y = Bp_v_y + At_v_y;
-			//	
-			//}
-
+		
 		}
 	}
 
@@ -111,7 +88,7 @@ void CBallsArray::Draw(HDC hdc)
 	for (int i{ 0 }; i < count; i++) {
 		balls[i]->Draw(hdc);
 	}
-	this->trap->Draw(hdc);
+	//this->trap->Draw(hdc);
 }
 
 CColoredBall* CBallsArray::AddColoredBall()
@@ -147,11 +124,11 @@ void CBallsArray::SetGravityFactor(double gF, DWORD ticks)
 	}
 }
 
-void CBallsArray::SetTrap()
+void CBallsArray::SetTrap(Trap *t)
 {
-	 trap->SetParams(200, 200, 20000.0, 50);
+	 
 	for (size_t i{ 0 }; i < this->count; i++) {
-		trap->MoveBall(balls[i]);
+		t->MoveBall(balls[i]);
 	}
 }
 

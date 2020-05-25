@@ -1,2 +1,4 @@
 D:\Ccp_programm\LabWork1\Debug\LabWork1.exe
 D:\Ccp_programm\LabWork1\Debug\LabWork1.pdb
+D:\WinApi32\LabWork1\Debug\LabWork1.exe
+D:\WinApi32\LabWork1\Debug\LabWork1.pdb

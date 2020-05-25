@@ -30,6 +30,8 @@ void wind::Draw(HDC hdc)
 	MoveToEx(hdc, 46 - x, 15 - y, NULL);
 	LineTo(hdc, 46 + x, 15 + y);
 	Ellipse(hdc, 46 + x - 2, 15 + y - 2, 46 + x + 2, 15 + y + 2);
+	//DeleteObject(hpen);
+	//DeleteBrush(hbrush);
 }
 
 void wind::SpeedUP()

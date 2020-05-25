@@ -17,7 +17,7 @@ class CBallsArray
 	
 public:
 	CBall** balls;
-	Trap * trap;
+	//Trap * trap;
 	CBallsArray(int max_balls);
 	virtual ~CBallsArray(void);
 	CBall* Add();
@@ -30,7 +30,7 @@ public:
 	void SetCount(const int count) { this->count = count; };
 	CBall * operator [] (const int index) { return this->balls[index]; };
 	void SetGravityFactor(double gF, DWORD ticks);
-	void SetTrap();
+	void SetTrap(Trap * t);
 	void SetWind(wind * w);
 };
 

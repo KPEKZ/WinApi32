@@ -21,6 +21,7 @@ RECT rect_wndSize;
 DWORD prev_frame_time;
 CBallSettingsMonitor monitor;
 wind wind1;
+Trap trap;
 
 // Отправить объявления функций, включенных в этот модуль кода:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -34,7 +35,7 @@ void OnIdle() {
     DWORD cur_time = GetTickCount64();
     DWORD delta_time = cur_time - prev_frame_time;
     balls.Move(delta_time);
-    balls.SetTrap();
+    balls.SetTrap(&trap);
     balls.SetWind(&wind1);
     if (gravity)
         balls.SetGravityFactor(19.8, delta_time);
@@ -78,7 +79,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     b->SetParams(150, 10, 10, -70, -70, rect_wndSize);
     b->SetColor(0, 255, 0);*/
     
-    
+    trap.SetParams(200, 200, 5000.0, 50);
     
     
     
@@ -286,13 +287,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     break;
     case WM_LBUTTONUP: {
         CColoredBall* cball = balls.AddColoredBall();
-        //trap.MoveBall(cball);
         if (cball != NULL) {
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
              double v_x, v_y;
              monitor.GetVXVY(v_x, v_y);
-             wind1.GetVXVY(cball);
             cball->SetParams(xxpos, yypos, 10, v_x, v_y, rect_wndSize);
             cball->SetColor(0, 0, 255);
             EndPaint(hWnd, &ps);
@@ -308,7 +307,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             balls.Draw(hdc);
             monitor.Draw(hdc);
             wind1.Draw(hdc);
-           // trap.Draw(hdc);
+            trap.Draw(hdc);
             if (gravity)
                 TextOutW(hdc, 65, 8, L"Gravity: On", 13);
             else 
@@ -316,13 +315,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
             if (drB) {
                 CBallsTimeLmited* cball = balls.AddLImitedBall();
-                //trap.MoveBall(cball);
-               // cball->SetHWND(hWnd);
                 if (cball != NULL) {
 
                     double v_x, v_y;
                     monitor.GetVXVY(v_x, v_y);
-                    wind1.GetVXVY(cball);
                     cball->SetParams(xxpos, yypos, 10, v_x, v_y, rect_wndSize);
                 
                 }

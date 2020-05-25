@@ -19,6 +19,8 @@ void Trap::SetParams(double x, double y, double F, double r)
 
 void Trap::Draw(HDC hdc)
 {
+	HPEN pen = CreatePen(PS_SOLID, 2, RGB(255, 0, 0));
+	SelectObject(hdc,pen);
 	Ellipse(hdc, this->x, this->y, this->x+this->r, this->y + this->r);
 }
 
@@ -31,48 +33,21 @@ void Trap::MoveBall(CBall* b)
 	double dist2 = x2_dist + y2_dist;
 	double dist = sqrt(dist2);
 
-	/*if (dist > r){
+	if (dist > r){
+		return;
 	}
-		return;*/
+		
 
-	if (dist < this->r) {
-		dist = this->r;
-		//b->v_x *= -1;
-		//b->v_y *= -1;
+	if (dist2 < this->r) {
+		dist2 = this->r;
+		
 	}
 		
 
 	double x_factor = (F * (x_dist / dist)) / (dist2);
 	double y_factor = (F * (y_dist / dist)) / (dist2);
-	//b->v_x += x_factor;
-	//b->v_y += y_factor;
-
-	//if (dist < r) {
-	//	dist = this->r;
-
-	//	//if (dist2 <= ((b->r + this->r) * (b->r + this->r))) {
-
-	//		double AC_scalar = b->v_x * x_dist + b->v_y * y_dist;
-	//		//double BC_scalar = ball2->v_x * C_x + ball2->v_y * C_y;
-
-	//		double Ap_v_x = (x_dist * AC_scalar) / dist2;
-	//		double Ap_v_y = (y_dist * AC_scalar) / dist2;
-	//		double At_v_x = b->v_x - Ap_v_x;
-	//		double At_v_y = b->v_x - Ap_v_y;
-
-	//		/*double Bp_v_x = (C_x * BC_scalar) / c2;
-	//		double Bp_v_y = (C_y * BC_scalar) / c2;
-	//		double Bt_v_x = ball2->v_x - Bp_v_x;
-	//		double Bt_v_y = ball2->v_x - Bp_v_y;*/
-
-	//		b->v_x = /*Bp_v_x*/  At_v_x + x_factor;
-	//		b->v_y = /*Bp_v_y*/  At_v_y + y_factor;
-	//		/*ball2->v_x = Ap_v_x + Bt_v_x;
-	//		ball2->v_y = Ap_v_y + Bt_v_y;*/
-
-	//	//}
-	//}
-
+	b->v_x += x_factor;
+	b->v_y += y_factor;
 
 }
 
