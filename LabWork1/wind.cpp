@@ -1,23 +1,27 @@
 #include "wind.h"
-#include "wind.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
 
 wind::wind()
 {
+	this->hbrush = CreateSolidBrush(RGB(255, 255, 255));
 	//this->F = 9.0;
 	this->angle = 45.0;
-	this->speed = 9.0;
+	this->speed = 0.0;
 }
 
 wind::~wind()
 {
-
+	DeleteBrush(this->hbrush);
+	DeleteObject(this->hpen);
 }
 
 void wind::Draw(HDC hdc)
 {
-	HBRUSH hbrush = CreateSolidBrush(RGB(255, 0, 0));
+	//hbrush = CreateSolidBrush(RGB(255, 0, 0));
+	SelectBrush(hdc, hbrush);
+	hpen = CreatePen(PS_SOLID, 1, RGB(6, 55, 179));
+	SelectObject(hdc, hpen);
 	double halfspeed = ((this->speed / 120) * 30) / 2;
 	double rad_angle = (this->angle / 180) * M_PI;
 	double x = halfspeed * cos(rad_angle);

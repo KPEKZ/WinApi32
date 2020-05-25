@@ -4,6 +4,8 @@
 #include "CBall.h"
 class wind
 {
+	HBRUSH hbrush;
+	HPEN hpen;
 	double angle;
 	double speed;
 	double R;
