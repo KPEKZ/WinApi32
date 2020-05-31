@@ -1,6 +1,4 @@
-﻿  Trap.cpp
-D:\WinApi32\LabWork1\Trap.cpp(24,58): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-D:\WinApi32\LabWork1\Trap.cpp(24,40): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-D:\WinApi32\LabWork1\Trap.cpp(24,28): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-D:\WinApi32\LabWork1\Trap.cpp(24,19): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+﻿  LabWork1.cpp
+D:\WinApi32\LabWork1\LabWork1.cpp(37,20): warning C4244: инициализация: преобразование "ULONGLONG" в "DWORD", возможна потеря данных
+D:\WinApi32\LabWork1\LabWork1.cpp(74,37): warning C4244: =: преобразование "ULONGLONG" в "DWORD", возможна потеря данных
   LabWork1.vcxproj -> D:\WinApi32\LabWork1\Debug\LabWork1.exe

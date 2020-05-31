@@ -10,14 +10,13 @@ CBall::~CBall()
 	//DeleteObject(hBrush);
 }
 
-void CBall::SetParams(double x, double y, double r, double v_x, double v_y, RECT rect)
+void CBall::SetParams(double x, double y, double r, double v_x, double v_y)
 {
 	this->x = x;
 	this->y = y;
 	this->r = r;
 	this->v_x = v_x;
 	this->v_y = v_y;
-	this->rect = rect;
 }
 
 void CBall::Draw(HDC hdc)
@@ -34,7 +33,7 @@ void CBall::Move(DWORD delta_ticks)
 		this->v_x = -(this->v_x);
 	if ((this->y >= rect.bottom - r) && (this->v_y > 0))
 		this->v_y = -(this->v_y);
-	if ((this->x <= r) && (this->v_y < 0))
+	if ((this->y <= r) && (this->v_y < 0))
 		this->v_y = -(this->v_y);
 
 	double dx = v_x * s_delta;

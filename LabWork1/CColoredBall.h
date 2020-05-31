@@ -11,5 +11,6 @@ public:
 	virtual ~CColoredBall();
 	virtual void SetColor(unsigned char r, unsigned char g, unsigned char b) override;
 	virtual void Draw(HDC hdc) override;
+	virtual bool GetType() { return true; };
 };
 

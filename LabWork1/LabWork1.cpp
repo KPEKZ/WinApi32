@@ -5,9 +5,10 @@
 
 #include "framework.h"
 #include "LabWork1.h"
-
+#include <vector>
 #define MAX_LOADSTRING 100
 
+using namespace std;
 // Глобальные переменные:
 HINSTANCE hInst;                                // текущий экземпляр
 WCHAR szTitle[MAX_LOADSTRING];                  // Текст строки заголовка
@@ -17,7 +18,8 @@ bool drB{ false };
 bool gravity{ false };
 
 CBallsArray balls(50);
-RECT rect_wndSize;
+
+//RECT rect_wndSize;
 DWORD prev_frame_time;
 CBallSettingsMonitor monitor;
 wind wind1;
@@ -65,25 +67,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     }
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_LABWORK1));
-
-
-    GetClientRect(hWnd, &rect_wndSize);
+   
+    RECT wnd_size;
+  
+    GetClientRect(hWnd, &wnd_size);
     prev_frame_time = GetTickCount64();
-    /*CBall* cball;
-    cball = balls.Add();
-    cball->SetParams(10, 10, 10, 50, 50, rect_wndSize);
-    cball = balls.Add();
-    cball->SetParams(100, 10, 10, -70, -70,rect_wndSize);
-    CColoredBall* b;
-    b = balls.AddColoredBall();
-    b->SetParams(150, 10, 10, -70, -70, rect_wndSize);
-    b->SetColor(0, 255, 0);*/
-    
     trap.SetParams(200, 200, 5000.0, 50);
-    
-    
-    
-
+    balls.SetBounds(wnd_size);
+   
     // Цикл основного сообщения:
     MSG msg;
 
@@ -185,9 +176,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
     switch (message)
     {
-
-
-
+   
     case WM_KEYDOWN:
     {
         switch (wParam)
@@ -265,12 +254,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
     case WM_TIMER: {
-        if (LOWORD(wParam) == 12) {
-            delete balls.balls[balls.GetCount() - 1];
-            balls.SetCount(balls.GetCount() - 1);
-            
-        }
-        break;
+
+        balls.del();
+          
     }
     break;
 
@@ -289,10 +275,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         CColoredBall* cball = balls.AddColoredBall();
         if (cball != NULL) {
             PAINTSTRUCT ps;
+            RECT cr;
+            GetClientRect(hWnd, &cr);
             HDC hdc = BeginPaint(hWnd, &ps);
              double v_x, v_y;
              monitor.GetVXVY(v_x, v_y);
-            cball->SetParams(xxpos, yypos, 10, v_x, v_y, rect_wndSize);
+            cball->SetParams(xxpos, yypos, 10, v_x, v_y);
+            cball->SetBounds(cr);
             cball->SetColor(0, 0, 255);
             EndPaint(hWnd, &ps);
         }
@@ -314,12 +303,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 TextOutW(hdc, 65, 8, L"Gravity: Off", 14);
 
             if (drB) {
+                
                 CBallsTimeLmited* cball = balls.AddLImitedBall();
                 if (cball != NULL) {
-
+                    RECT cr;
+                    GetClientRect(hWnd, &cr);
                     double v_x, v_y;
                     monitor.GetVXVY(v_x, v_y);
-                    cball->SetParams(xxpos, yypos, 10, v_x, v_y, rect_wndSize);
+                    cball->SetParams(xxpos, yypos, 10, v_x, v_y);
+                    cball->SetBounds(cr);
                 
                 }
             }
@@ -337,7 +329,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             rect.left = 0;
             rect.bottom = HIWORD(lParam);
             rect.right = LOWORD(lParam);
-            balls.SetBounds(rect_wndSize);
+            balls.SetBounds(rect);
          
         }
         break;

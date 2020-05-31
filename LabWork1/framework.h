@@ -22,5 +22,7 @@
 #include "CBallsTimeLmited.h"
 #include "Trap.h"
 #include "wind.h"
+#include <typeinfo>
+
 
 

@@ -1,6 +1,10 @@
 #include "CBallsArray.h"
 
-CBallsArray::CBallsArray(int max_balls) 
+CBallsArray::CBallsArray()
+{
+}
+
+CBallsArray::CBallsArray(int max_balls)
 {
 	this->gF = 0;
 	this->max_balls = max_balls;
@@ -14,9 +18,7 @@ CBallsArray::~CBallsArray(void)
 	for (int i{ 0 }; i < count; i++) {
 		delete this->balls[i];
 	}
-
 	delete[] this->balls;
-	//delete this->trap;
 }
 
 CBall* CBallsArray::Add()
@@ -85,8 +87,10 @@ void CBallsArray::Move(DWORD ticks)
 
 void CBallsArray::Draw(HDC hdc)
 {
+	//if (!this->empty())
 	for (int i{ 0 }; i < count; i++) {
-		balls[i]->Draw(hdc);
+		//if ((balls + i) != nullptr)
+			balls[i]->Draw(hdc);
 	}
 	//this->trap->Draw(hdc);
 }
@@ -139,5 +143,39 @@ void CBallsArray::SetWind(wind* w)
 	}
 
 }
+
+void CBallsArray::del()
+{
+	CBall** temp = new CBall *[this->max_balls];
+
+	int index{ 0 };
+
+	for (int i{}; i < count; i++) {
+		if (typeid(*balls[i]).name() == typeid(CBallsTimeLmited).name()) {
+			index = i;
+		}
+	}
+
+	for (int i{0}; i < index; i++) {
+		 temp[i] = balls[i] ;
+	}
+
+	int k{ index };
+	do
+	{
+		temp[k] = balls[k + 1];
+	} while (k < count - 2);
+
+	count--;
+
+	this->balls = new CBall * [max_balls];
+
+	for (int i{0}; i < count; i++) {
+			balls[i] = temp[i];
+	}	
+
+	
+}
+
 
 
