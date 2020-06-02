@@ -1,4 +1,39 @@
-﻿  LabWork1.cpp
+﻿  CBall.cpp
+D:\WinApi32\LabWork1\CBall.cpp(24,31): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\CBall.cpp(24,26): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\CBall.cpp(24,21): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\CBall.cpp(24,16): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  CBallsArray.cpp
+D:\WinApi32\LabWork1\CBallsArray.cpp(122,24): warning C4018: <: несоответствие типов со знаком и без знака
+D:\WinApi32\LabWork1\CBallsArray.cpp(126,24): warning C4018: <: несоответствие типов со знаком и без знака
+D:\WinApi32\LabWork1\CBallsArray.cpp(134,24): warning C4018: <: несоответствие типов со знаком и без знака
+D:\WinApi32\LabWork1\CBallsArray.cpp(141,24): warning C4018: <: несоответствие типов со знаком и без знака
+  CBallsTimeLmited.cpp
+D:\WinApi32\LabWork1\CBallsTimeLmited.cpp(28,38): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\CBallsTimeLmited.cpp(28,31): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\CBallsTimeLmited.cpp(28,24): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\CBallsTimeLmited.cpp(28,17): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  CColoredBall.cpp
+D:\WinApi32\LabWork1\CColoredBall.cpp(23,38): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\CColoredBall.cpp(23,31): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\CColoredBall.cpp(23,24): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\CColoredBall.cpp(23,17): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  LabWork1.cpp
 D:\WinApi32\LabWork1\LabWork1.cpp(37,20): warning C4244: инициализация: преобразование "ULONGLONG" в "DWORD", возможна потеря данных
 D:\WinApi32\LabWork1\LabWork1.cpp(74,37): warning C4244: =: преобразование "ULONGLONG" в "DWORD", возможна потеря данных
+  Trap.cpp
+D:\WinApi32\LabWork1\Trap.cpp(24,58): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\Trap.cpp(24,40): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\Trap.cpp(24,28): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\Trap.cpp(24,19): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  wind.cpp
+D:\WinApi32\LabWork1\wind.cpp(29,27): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\wind.cpp(29,19): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\wind.cpp(30,25): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\wind.cpp(30,17): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\wind.cpp(31,58): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\wind.cpp(31,46): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\wind.cpp(31,34): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+D:\WinApi32\LabWork1\wind.cpp(31,22): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  Создание кода...
   LabWork1.vcxproj -> D:\WinApi32\LabWork1\Debug\LabWork1.exe

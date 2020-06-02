@@ -256,6 +256,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_TIMER: {
 
         balls.del();
+KillTimer(hWnd, 12);
           
     }
     break;

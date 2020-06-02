@@ -10,8 +10,9 @@ public:
 	double r;
 	double v_x, v_y;
 	RECT rect;
+
 	bool timeLimit{ false };
-	
+
 	CBall();
 	virtual ~CBall();
 	 void SetParams(double x, double y, double r, double v_x, double v_y);
